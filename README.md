@@ -28,8 +28,8 @@ Wave is an app that allows users to browse music from the [The Spotify API](http
 - [Flask](https://flask.palletsprojects.com/en/1.1.x/quickstart/) - Different endpoint for web application
 
 ### Libraries used
-- [os] - Operating system dependent functionality
-- [random] - Number generator
+- [os](https://docs.python.org/3/library/os.html) - Operating system dependent functionality
+- [random](https://docs.python.org/3/library/random.html) - Number generator
 
 ### Technology used
-- [AWS-Cloud9] - Online IDE for write, run, and debug serverless applications
+- [AWS-Cloud9](https://aws.amazon.com/cloud9/) - Online IDE for write, run, and debug serverless applications
