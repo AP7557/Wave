@@ -3,7 +3,7 @@ import os
 import random
 
 app = Flask(__name__)
-
+# load_dotenv(find_dotenv())
 @app.route('/')
 def hello_world():
     random_number = random.randint(0,3)

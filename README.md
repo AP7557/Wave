@@ -1,5 +1,5 @@
 # Wave
-Wave is an app that allows users to browse music from the [The Spotify API](https://developer.spotify.com).
+Wave is an app that allows users to browse music from the [The Spotify API].
 
 - [ ] Randomly chose a music artist from a given list of 3.
 - [ ] Fetch top 10 track of that artist.
@@ -30,6 +30,8 @@ Wave is an app that allows users to browse music from the [The Spotify API](http
 ### Libraries used
 - [os](https://docs.python.org/3/library/os.html) - Operating system dependent functionality
 - [random](https://docs.python.org/3/library/random.html) - Number generator
+- [requests](https://requests.readthedocs.io/en/master/) - HTTP library to fetch data
+- [python-dotenv](https://pypi.org/project/python-dotenv/) - Adds .env to safely store api keys
 
 ### Technology used
 - [AWS-Cloud9](https://aws.amazon.com/cloud9/) - Online IDE for write, run, and debug serverless applications
