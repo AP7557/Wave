@@ -14,4 +14,4 @@ params = {
 
 def resp(id):
     response = requests.get(new_release + id +'/top-tracks', params=params, headers=headers)
-    data = response.json()
+    return response.json()
