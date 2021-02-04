@@ -2,12 +2,20 @@
 <html>
 
     <head>
-        <link rel="stylesheet" href={{url_for('static', filename='style.css')}} type="text/css" />
+        <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}" type="text/css" />
     </head>
 
     <body>
-        <h3>Hello, World</h1>
-        <img src="https://fotofloblog.files.wordpress.com/2012/12/a-nice-place-to-watch-sun-go-down-1-of-1.jpg" />
+        <h3>{{data.name}}</h1>
+        <h5>{{data.artists}}</h5>
+        <img src={{data.image}} width=100 hight=100></img>
+        <br>
+        {%if data.song_preview_url != None%}
+        <audio controls>
+          <source src={{data.song_preview_url}} type="audio/mpeg">
+          Your browser does not support the audio element.
+        </audio>
+        {%endif%}
     </body>
 
 </html>

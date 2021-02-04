@@ -15,16 +15,18 @@ def rand_song():
     return { 'name': data['tracks'][random_number]['name'],
                 'artists': data['tracks'][random_number]['album']['artists'][0]['name'],
                 'image': data['tracks'][random_number]['album']['images'][0]['url'],
-                'song_preview_url': data['tracks'][random_number]['external_urls']['spotify']
+                'song_preview_url': data['tracks'][random_number]['preview_url']
             }
 
 app = Flask(__name__)
 @app.route('/')
 def hello_world():
-    return render_template('index.html', rand_song())
+    return render_template('index.html', data=rand_song())
 
 app.run(
     port=int(os.getenv('PORT', 8080)),
     host=os.getenv("IP", '0.0.0.0'),
     debug=True
 )
+
+app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 0
