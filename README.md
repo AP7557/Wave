@@ -1,9 +1,9 @@
 # Wave
 Wave is an app that allows users to browse music from the [The Spotify API].
 
-- [ ] Randomly chose a music artist from a given list of 3.
-- [ ] Fetch top 10 track of that artist.
-- [ ] Randomly choose a song and show (song name, song artist, song-related image, song preview URL).
+- [x] Randomly chose a music artist from a given list of 3.
+- [x] Fetch top 10 track of that artist.
+- [x] Randomly choose a song and show (song name, song artist, song-related image, song preview URL).
 - [ ] Clickable link for user to go to the song's lyrics page.
 
 ### BONUS
@@ -12,13 +12,15 @@ Wave is an app that allows users to browse music from the [The Spotify API].
 
 ### Question and Answer
 1. What are at least 3 technical issues you encountered with your project? How did you fix them?
--
+- The very first issuse I came across with was my styling was not getting loaded when I change them, I had to fix it by renaming the file everytime
+- The Spotify API documentation was hard to follow to get the access token, I had to search on the web on how to get the token
+
 
 2. What are known problems, if any, with your project?
--
+- The project looks to plain
 
 3. What would you do to improve your project in the future?
--
+- Instead of playing the preview of the song, I might play the whole song or make a link that takes you to that sone page, maybe even add a search functionality for songs
 
 ### APIs used
 - [Spotify API](https://developer.spotify.com) - For music artists and its song

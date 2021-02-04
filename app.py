@@ -28,5 +28,3 @@ app.run(
     host=os.getenv("IP", '0.0.0.0'),
     debug=True
 )
-
-app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 0

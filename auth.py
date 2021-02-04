@@ -13,8 +13,6 @@ token = requests.post(url, {
     'client_secret': os.getenv('CLIENT_SECRET'),
 })
 
-# convert the response to JSON
 token_data = token.json()
 
-# save the access token
 access_token = token_data['access_token']

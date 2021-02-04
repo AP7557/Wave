@@ -1,0 +1,23 @@
+body{
+    background-color: aqua;
+    text-align: center;
+}
+
+h3{
+    font-size:2em;
+    margin-bottom: 1px;
+    background: -webkit-linear-gradient(forestgreen, blue);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+h5{
+    font-size:1.3em;
+    color: crimson;
+    margin-top: 15px;
+    font-style: italic;
+}
+
+audio{
+    margin-top: 15px;
+}
