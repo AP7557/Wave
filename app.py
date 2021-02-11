@@ -50,9 +50,11 @@ def user_song(tag):
     data = user_song_resp(tag)
     name = data['tracks']['items'][0]['name']
     artists = data['tracks']['items'][0]['album']['artists'][0]['name']
+    artists_data = artists_resp(data['tracks']['items'][0]['album']['artists'][0]['id'])
     lyrics = get_Lyrics(name, artists)
     return { 'name': name,
                 'artists': artists,
+                'artists_img': artists_data['images'][0]['url'],
                 'image': data['tracks']['items'][0]['album']['images'][0]['url'],
                 'song_preview_url': data['tracks']['items'][0]['preview_url'],
                 'song_lyrics': lyrics

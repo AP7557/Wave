@@ -4,10 +4,10 @@ Wave is an app that allows users to browse music from the [The Spotify API].
 - [x] Randomly chose a music artist from a given list of 3.
 - [x] Fetch top 10 track of that artist.
 - [x] Randomly choose a song and show (song name, song artist, song-related image, song preview URL).
-- [ ] Clickable link for user to go to the song's lyrics page.
+- [x] Clickable link for user to go to the song's lyrics page.
 
 ### BONUS
-- [ ] User can search a music artist from the Spotify API.
+- [x] User can search a music artist from the Spotify API.
 - [ ] Play the full song.
 
 ### Question and Answer
