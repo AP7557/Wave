@@ -8,7 +8,7 @@ Wave is an app that allows users to browse music from the [The Spotify API].
 
 ### BONUS
 - [ ] User can search a music artist from the Spotify API.
-- [ ] Play the song.
+- [ ] Play the full song.
 
 ### Question and Answer
 1. What are at least 3 technical issues you encountered with your project? How did you fix them?

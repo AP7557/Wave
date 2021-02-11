@@ -1,8 +1,10 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request, redirect, url_for
 import os
 import random
 from songs import resp
 from lyrics import lyrics_resp
+from user_song import user_song_resp
+import json
 
 def rand_artists():
     random_number = random.randint(0,2)
@@ -10,10 +12,8 @@ def rand_artists():
     return artists[random_number]
 
 def get_Lyrics(song_name, song_artists):
-
     data = lyrics_resp(song_name, song_artists)
     length = len(data["response"]["hits"])
-
     try:
         left_perm = song_name.index('(')
         right_perm = song_name.index(')')
@@ -21,7 +21,6 @@ def get_Lyrics(song_name, song_artists):
     except ValueError:
         song_name=song_name
 
-    print(song_name)
     for i in range(0, length):
         if(data["response"]["hits"][i]["result"]["title"] == song_name):
             return data["response"]["hits"][i]["result"]["url"]
@@ -37,16 +36,31 @@ def rand_song():
     lyrics = get_Lyrics(name, artists)
     return { 'name': name,
                 'artists': artists,
-                'image': data['tracks'][random_number]['album']['images'][0]['url'],
+                'artists_url': data['tracks'][random_number]['album']['artists'][0]['url'],
                 'song_preview_url': data['tracks'][random_number]['preview_url'],
                 'song_lyrics': lyrics
             }
 
-rand_song()
+def user_song(tag):
+    data = user_song_resp(tag)
+    name = data['tracks']['items'][0]['name']
+    artists = data['tracks']['items'][0]['album']['artists'][0]['name']
+    lyrics = get_Lyrics(name, artists)
+    return { 'name': name,
+                'artists': artists,
+                'image': data['tracks']['items'][0]['album']['images'][0]['url'],
+                'song_preview_url': data['tracks']['items'][0]['preview_url'],
+                'song_lyrics': lyrics
+            }
+
 app = Flask(__name__)
-@app.route('/')
+@app.route('/', methods=['GET', 'POST'])
 def hello_world():
-    return render_template('index.html', data=rand_song())
+    if request.method == 'POST':
+        tag = request.form['tag']
+        return render_template('index.html', data=user_song(tag))
+    else:
+        return render_template('index.html', data=rand_song())
 
 app.run(
     port=int(os.getenv('PORT', 8080)),
