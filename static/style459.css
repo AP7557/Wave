@@ -22,8 +22,13 @@ audio{
     margin-top: 15px;
 }
 
+<<<<<<< HEAD:static/style459.css
 #artists_img{
     border-radius: 10em;
     width: 50px;
     height: 50px;
+=======
+a{
+    font-size: 2em;
+>>>>>>> search:static/style123.css
 }
