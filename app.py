@@ -1,7 +1,7 @@
 from flask import Flask, render_template
 import os
 import random
-from songs import resp
+from songs import resp, artists_resp
 from lyrics import lyrics_resp
 
 def rand_artists():
@@ -28,7 +28,11 @@ def get_Lyrics(song_name, song_artists):
     return data["response"]["hits"][0]["result"]["url"]
 
 def rand_song():
-    data = resp(rand_artists())
+    artists = rand_artists()
+
+    data = resp(artists)
+    artists_data = artists_resp(artists)
+
     length = len(data['tracks'])
     random_number = random.randint(0,length-1)
 
@@ -37,6 +41,7 @@ def rand_song():
     lyrics = get_Lyrics(name, artists)
     return { 'name': name,
                 'artists': artists,
+                'artists_img': artists_data['images'][0]['url'],
                 'image': data['tracks'][random_number]['album']['images'][0]['url'],
                 'song_preview_url': data['tracks'][random_number]['preview_url'],
                 'song_lyrics': lyrics

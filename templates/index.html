@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <link rel="stylesheet" href="{{ url_for('static', filename='style123.css') }}" type="text/css" />
+        <link rel="stylesheet" href="{{ url_for('static', filename='style459.css') }}" type="text/css" />
     </head>
 
     <body>
         <h3>{{data.name}}</h1>
-        <h5>By: {{data.artists}}</h5>
+        <h5><img id='artists_img' src={{data.artists_img}}></img> {{data.artists}}</h5>
         <img src={{data.image}} width=200 height=200></img>
         <br>
         {%if data.song_preview_url != None%}
