@@ -8,7 +8,8 @@ headers = {
     'Authorization': 'Bearer {token}'.format(token=lyrics_access_token),
 }
 
-
-def resp(song_name, song_artists):
+def lyrics_resp(song_name, song_artists):
     response = requests.get(lyrics_url + song_name + " by " + song_artists, headers=headers)
     return response.json()
+
+
