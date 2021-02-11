@@ -14,6 +14,7 @@ Wave is an app that allows users to browse music from the [The Spotify API].
 1. What are at least 3 technical issues you encountered with your project? How did you fix them?
 - The very first issuse I came across with was my styling was not getting loaded when I change them, I had to fix it by renaming the file everytime
 - The Spotify API documentation was hard to follow to get the access token, I had to search on the web on how to get the token
+- The Genius API to get Access Token was hard to understand
 
 
 2. What are known problems, if any, with your project?

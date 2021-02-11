@@ -1,10 +1,9 @@
-from flask import Flask, render_template, request, redirect, url_for
+from flask import Flask, render_template, request
 import os
 import random
 from songs import resp, artists_resp
 from lyrics import lyrics_resp
 from user_song import user_song_resp
-import json
 
 def rand_artists():
     random_number = random.randint(0,2)
