@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <link rel="stylesheet" href="{{ url_for('static', filename='style00.css') }}" type="text/css" />
+        <link rel="stylesheet" href="{{ url_for('static', filename='style000.css') }}" type="text/css" />
     </head>
 
     <body>
-        <form method="POST">
+        <form id="rel" method="GET">
+            <input id="reload" type="submit" value="Reload">
+        </form>
+        <form  id="sub" method="POST">
             Song Name:<br>
             <input type="text" name="tag"><br>
             <input id="submit" type="submit" value="Submit">

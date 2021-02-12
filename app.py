@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, redirect, url_for
 import os
 import random
 from songs import resp, artists_resp
@@ -64,9 +64,13 @@ app = Flask(__name__)
 def hello_world():
     if request.method == 'POST':
         tag = request.form['tag']
-        return render_template('index.html', data=user_song(tag))
+        if(tag == ""):
+            data=rand_song()
+        else:
+            data = user_song(tag)
     else:
-        return render_template('index.html', data=rand_song())
+        data=rand_song()
+    return render_template('index.html', data=data)
 
 app.run(
     port=int(os.getenv('PORT', 8080)),

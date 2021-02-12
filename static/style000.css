@@ -32,6 +32,11 @@ audio{
     background: greenyellow;
 }
 
+#reload {
+    display: block;
+    margin-left: 10em;
+}
+
 a{
     font-size: 2em;
 }
