@@ -8,6 +8,7 @@ headers = {
     'Authorization': 'Bearer {token}'.format(token=access_token),
 }
 
+#Return user input song data
 def user_song_resp(song):
     response = requests.get(user_url, params= {'q': song, 'type': 'track'}, headers=headers)
     return response.json()

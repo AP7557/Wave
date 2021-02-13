@@ -24,7 +24,11 @@
         </audio>
         {%endif%}
         <br>
+        {%if data.song_lyrics == "Lyrics Not Found"%}
+        <h5>{{data.song_lyrics}}</h5>
+        {%else%}
         <a href={{data.song_lyrics}} target="_blank">Click for Lyrics</a>
+        {%endif%}
     </body>
 
 </html>

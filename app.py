@@ -5,15 +5,19 @@ from songs import resp, artists_resp
 from lyrics import lyrics_resp
 from user_song import user_song_resp
 
+# Get a random artist
 def rand_artists():
     random_number = random.randint(0,2)
     artists = ['0OpWIlokQeE7BNQMhuu2Nx', '7dGJo4pcD2V6oG8kP0tJRR', '137W8MRPWKqSmrBGDBFSop'] #colt, eninem, wiz
     return artists[random_number]
 
+#Get lyrics for a given artist and song
 def get_Lyrics(song_name, song_artists):
     data = lyrics_resp(song_name, song_artists)
     length = len(data["response"]["hits"])
-    try:
+    if(length == 0):
+        return "Lyrics Not Found"
+    try:   #Get rid of fts
         left_perm = song_name.index('(')
         right_perm = song_name.index(')')
         song_name = song_name[0:left_perm] + song_name[right_perm:-1]
@@ -25,6 +29,7 @@ def get_Lyrics(song_name, song_artists):
             return data["response"]["hits"][i]["result"]["url"]
     return data["response"]["hits"][0]["result"]["url"]
 
+#Get the song information
 def rand_song():
     artists = rand_artists()
 
@@ -45,8 +50,11 @@ def rand_song():
                 'song_lyrics': lyrics
             }
 
+#Get the song information based on user input
 def user_song(tag):
     data = user_song_resp(tag)
+    if(len(data['tracks']['items']) == 0):
+        return rand_song()
     name = data['tracks']['items'][0]['name']
     artists = data['tracks']['items'][0]['album']['artists'][0]['name']
     artists_data = artists_resp(data['tracks']['items'][0]['album']['artists'][0]['id'])
