@@ -5,7 +5,7 @@ Wave is an app that allows users to browse music from the [The Spotify API].
 1. `pip install -r requirements.txt`
 2. `Run command in terminal (in your project directory): python app.py`
 
-###Additional Required Files
+### Additional Required Files
 1. `Create a .env file`
 2. `Create Spotify developer account to get the Client Id and Client Secret and put it in the file`
 3. `Create Genius account to get the Access Token`
