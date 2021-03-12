@@ -1,6 +1,6 @@
 # Wave
-https://vast-chamber-63113.herokuapp.com
-Wave is an app that allows users to browse music from the [The Spotify API].
+-https://vast-chamber-63113.herokuapp.com
+-Wave is an app that allows users to browse music from the [The Spotify API].
 
 ## Requirements and RUN
 1. `pip install -r requirements.txt`
